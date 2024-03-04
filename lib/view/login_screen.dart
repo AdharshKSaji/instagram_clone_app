@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Image.asset(ImageConstants.instaLogoPng),
+                Image.asset(ImageConstants.appIconPng),
                 SizedBox(
                   height: 39,
                 ),
@@ -79,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Bottom_Navigation(),
+                            builder: (context) => BottomNavBarScreen(),
                           ),
                           (route) => false);
                     }),
