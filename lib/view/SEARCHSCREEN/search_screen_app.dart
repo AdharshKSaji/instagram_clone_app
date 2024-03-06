@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:instagram_clone_app/core/constants/color_constants.dart';
+import 'package:instagram_clone_app/view/SEARCHSCREEN/search_screen_result.dart';
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
 
@@ -55,16 +56,25 @@ class _SearchScreenState extends State<SearchScreen> {
                   10,
                   (index) => Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 40,
-                          width: 100,
-                          color: Colors.red,
+                        child: Container(padding: EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: ColorConstants.normalGrey.withOpacity(0.18)
+                          ),borderRadius: BorderRadius.circular(6)
+                        ),child: const Row(
+                          children: [
+                            Icon(Icons.tv),SizedBox(
+                              width: 5.5,
+                            ),Text("IGTV")
+                          ],
+                        ),
+                          
                         ),
                       )),
             ),
           ),
         ),
       ),
-    ));
+    ),body: SearchGrid());
   }
 }

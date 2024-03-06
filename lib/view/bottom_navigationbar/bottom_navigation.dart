@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone_app/core/constants/color_constants.dart';
+import 'package:instagram_clone_app/view/SEARCHSCREEN/search_screen_app.dart';
 import 'package:instagram_clone_app/view/homescreem/homescreen.dart';
 import 'package:instagram_clone_app/view/login_screen.dart';
-import 'package:instagram_clone_app/view/searchscreen.dart';
+import 'package:instagram_clone_app/view/profilescreen/profile_screen.dart';
+
 
 
 class BottomNavBarScreen extends StatefulWidget {
@@ -22,9 +24,9 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
     Container(
       color: Colors.blue,
     ),
-    Container(
-      color: Colors.green,
-    ),
+    ProfilePage()
+   
+    ,
   ];
 
   int selectedIndex = 0;
