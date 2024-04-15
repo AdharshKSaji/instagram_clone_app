@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone_app/core/constants/color_constants.dart';
+import 'package:instagram_clone_app/core/constants/image_constants.dart';
 import 'package:instagram_clone_app/view/SEARCHSCREEN/search_screen_app.dart';
+import 'package:instagram_clone_app/view/fovorite/favouritescreen.dart';
 import 'package:instagram_clone_app/view/homescreem/homescreen.dart';
-import 'package:instagram_clone_app/view/login_screen.dart';
+import 'package:instagram_clone_app/view/profilescreen/postscreen.dart';
 import 'package:instagram_clone_app/view/profilescreen/profile_screen.dart';
-
-
+import 'package:instagram_clone_app/view/widgets/custom_notification_card.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
   const BottomNavBarScreen({super.key});
@@ -17,16 +18,11 @@ class BottomNavBarScreen extends StatefulWidget {
 class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   List<Widget> screesList = [
     HomeScreen(),
-    SearchScreen(),
-    Container(
-      color: Colors.white,
-    ),
-    Container(
-      color: Colors.blue,
-    ),
-    ProfilePage()
-   
-    ,
+    Search(),
+    CustomNotificationCard(),
+    NotificationScreen(),
+    Profile(),
+    
   ];
 
   int selectedIndex = 0;
@@ -45,7 +41,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LoginScreen(),
+                    builder: (context) => CreatePostScreen(),
                   ));
             }
           },
@@ -72,19 +68,17 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
                 label: ""),
             const BottomNavigationBarItem(
                 activeIcon: CircleAvatar(
-                  backgroundColor:ColorConstants.primaryBlack,
+                  backgroundColor: ColorConstants.primaryBlack,
                   radius: 15,
                   child: Center(
                     child: CircleAvatar(
                       radius: 14,
-                      backgroundImage: NetworkImage(
-                          "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600"),
+                      backgroundImage: AssetImage(ImageConstants.proPic),
                     ),
                   ),
                 ),
                 icon: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600"),
+                  backgroundImage: AssetImage(ImageConstants.proPic),
                   radius: 15,
                 ),
                 label: ""),

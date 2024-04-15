@@ -36,8 +36,8 @@ class CreateAccountScreen extends StatelessWidget {
                 height: 12,
               ),
               CustomButton(
-                buttonColor: ColorConstants.primaryBlue,
-                havVBorder: false,
+                BottonColors: ColorConstants.primaryBlue,
+                haveBorder: false,
                 text: "Log in",
                 onTap: () {
                   Navigator.pushReplacement(

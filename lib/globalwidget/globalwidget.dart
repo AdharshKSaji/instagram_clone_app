@@ -1,40 +1,44 @@
- import 'package:flutter/material.dart';
+
+import 'package:flutter/material.dart';
 import 'package:instagram_clone_app/core/constants/color_constants.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
       {super.key,
-      required this.buttonColor,
-      required this.havVBorder,
       required this.text,
-      this.onTap});
-
-  final Color buttonColor;
-  final bool havVBorder;
+      this.BottonColors = ColorConstants.primaryBlue,
+      this.haveBorder = false,
+      this.textColor = ColorConstants.primarWhite,
+      this.onTap,
+      this.verticalPadding = 15,
+      this.horizontalPadding = 0});
   final String text;
+  final Color BottonColors;
+  final bool haveBorder;
+  final Color textColor;
   final void Function()? onTap;
+  final double verticalPadding;
+  final double horizontalPadding;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Container(
+        padding: EdgeInsets.symmetric(
+            vertical: verticalPadding, horizontal: horizontalPadding),
         width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
-          color: buttonColor,
-          borderRadius: BorderRadius.circular(5),
-          border: havVBorder == true
-              ? Border.all(color: ColorConstants.primaryBlack.withOpacity(.5))
-              : null,
-        ),
+            color: BottonColors,
+            borderRadius: BorderRadius.circular(5),
+            border: haveBorder == true
+                ? Border.all(
+                    color: ColorConstants.primaryBlack.withOpacity(.4))
+                : null),
         child: Center(
             child: Text(
           text,
-          style: TextStyle(
-              color: ColorConstants.primarWhite,
-              fontSize: 14,
-              fontWeight: FontWeight.w500),
+          style: TextStyle(color: textColor, fontWeight: FontWeight.bold),
         )),
       ),
     );

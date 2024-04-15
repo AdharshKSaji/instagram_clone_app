@@ -72,8 +72,8 @@ class LoginScreen extends StatelessWidget {
                   height: 30,
                 ),
                 CustomButton(
-                    buttonColor: ColorConstants.primaryBlue,
-                    havVBorder: false,
+                    BottonColors: ColorConstants.primaryBlue,
+                    haveBorder: false,
                     text: "Log in",
                     onTap: () {
                       Navigator.pushAndRemoveUntil(
